@@ -47,6 +47,7 @@ class MyHomePage extends StatelessWidget {
           builder: (context, orientation) => orientation == Orientation.portrait
               ? Column(
                   children: [
+                    RaumZwischen(),
                     RaumReihe(
                       children: [
                         RaumZwischen(),
@@ -107,6 +108,7 @@ class MyHomePage extends StatelessWidget {
                 )
               : Column(
                   children: [
+                    RaumZwischen(),
                     RaumReihe(
                       children: [
                         RaumZwischen(),
@@ -202,12 +204,14 @@ class RaumTaste extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 10,
-      child: LayoutBuilder(
-        builder: (context, constraints) => Container(
-          color: Colors.blue,
-          child: Text(title),
-          height: (constraints.maxHeight > constraints.maxWidth) ? constraints.maxWidth : constraints.maxHeight,
-          width: (constraints.maxHeight > constraints.maxWidth) ? constraints.maxWidth : constraints.maxHeight,
+      child: Center(
+        child: LayoutBuilder(
+          builder: (context, constraints) => Container(
+            color: Colors.blue,
+            child: Text(title),
+            height: (constraints.maxHeight > constraints.maxWidth) ? constraints.maxWidth : constraints.maxHeight,
+            width: (constraints.maxHeight > constraints.maxWidth) ? constraints.maxWidth : constraints.maxHeight,
+          ),
         ),
       ),
     );
